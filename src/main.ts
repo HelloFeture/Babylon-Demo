@@ -8,7 +8,8 @@ var engine: BABYLON.Engine = new BABYLON.Engine(canvas, true);
 var createScene = function () {
 
     // This creates a basic Babylon Scene object (non-mesh)
-    var scene = new BABYLON.Scene(engine);
+    let scene = new BABYLON.Scene(engine);
+    scene.clearColor = new BABYLON.Color4(0, 0, 0, 1);
 
     // This creates and positions a free camera (non-mesh)
     var camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 5, -10), scene);
@@ -26,13 +27,13 @@ var createScene = function () {
     light.intensity = 0.7;
 
     // Our built-in 'sphere' shape. Params: name, subdivs, size, scene
-    var sphere = BABYLON.Mesh.CreateSphere("sphere1", 16, 2, scene);
+    // var sphere = BABYLON.Mesh.CreateSphere("sphere1", 16, 2, scene);
 
     // Move the sphere upward 1/2 its height
-    sphere.position.y = 1;
+    // sphere.position.y = 1;
 
     // Our built-in 'ground' shape. Params: name, width, depth, subdivs, scene
-    var ground = BABYLON.Mesh.CreateGround("ground1", 6, 6, 2, scene);
+    // var ground = BABYLON.Mesh.CreateGround("ground1", 6, 6, 2, scene);
 
     // GUI
     var advancedTexture = GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
